@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <page_node title="104" id="498172">
+    <image_node title="Graphic" id="498197" src="8674746348ff87f54c58c.png" x="0" y="0" visible="1" enable_events="1"/>
+    <text_node title="Text" id="498198" x="700" y="150" width="270" height="550" selectable="0" visible="1" auto_size="1" text_align="left" vertical_align="top">You can go to a four-year or two-year college, join the military, take classes on a trade, or join the workforce to receive on-the-job training. &lt;br&gt;&lt;br&gt;More education means more choices and more money for you. </text_node>
+    <audio_node title="Audio" id="498199" src="176166197490b4d5ac5a3e.mp3" loop="0" start="1" required="1">
+      <captions_node id="captions_540970">
+        <caption_node id="391587" trigger="0"><![CDATA[Each one of you has an opportunity to succeed in life, and one of the marks of success is having a good job. ]]></caption_node>
+        <caption_node id="391588" trigger="8.3"><![CDATA[When you graduate from high school, your diploma helps open doors for your future. ]]></caption_node>
+        <caption_node id="391589" trigger="13.2"><![CDATA[You can go to a four-year or two-year college, join the military, take classes on a trade, or join the workforce to receive on-the-job training. ]]></caption_node>
+        <caption_node id="391590" trigger="23.8"><![CDATA[For the most part, more education means more choices for you, and it also means you will earn more money than others who aren't as well educated.]]></caption_node>
+      </captions_node>
+    </audio_node>
+  </page_node>
+</root>

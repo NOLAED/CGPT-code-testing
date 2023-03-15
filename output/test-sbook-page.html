@@ -1,0 +1,122 @@
+
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>104</title>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+            <style>
+              * {
+                box-sizing: border-box;
+              }
+              body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                line-height: 1.4;
+                color: #333;
+                background-color: #f8f8f8;
+              }
+              .container {
+                max-width: 960px;
+                margin: 0 auto;
+                padding: 40px;
+              }
+              .image-container {
+                position: relative;
+              }
+              .image-container img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+              }
+              .text-container {
+                position: absolute;
+                left: 700px;
+                top: 150px;
+                width: 270px;
+                height: 550px;
+                padding: 20px;
+                background-color: rgba(255, 255, 255, 0.9);
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+              }
+              .text-container p {
+                margin: 0 0 1em 0;
+              }
+              audio {
+                display: block;
+                margin: 20px 0;
+                width: 100%;
+                background-color: #000;
+                border-radius: 5px;
+              }
+              .captions {
+                display: block;
+                margin: 0;
+                padding              : 5px;
+                background-color: #000;
+                color: #fff;
+                font-size: 14px;
+                line-height: 1.4;
+                border-radius: 5px;
+                text-align: center;
+              }
+              @media screen and (max-width: 768px) {
+                .text-container {
+                  position: static;
+                  width: auto;
+                  height: auto;
+                  margin: 20px 0;
+                }
+                .captions p {
+                  font-size: 12px;
+                }
+              }
+            </style>
+          </head>
+          <body>
+            <div class="container">
+              <div class="image-container">
+                <img src="8674746348ff87f54c58c.png" alt="Graphic">
+                <div class="text-container">
+                  <p>You can go to a four-year or two-year college, join the military, take classes on a trade, or join the workforce to receive on-the-job training. <br><br>More education means more choices and more money for you. </p>
+                </div>
+              </div>
+              <audio controls>
+                <source src="176166197490b4d5ac5a3e.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <ul class="captions"><p class="captions" data-trigger="0">Each one of you has an opportunity to succeed in life, and one of the marks of success is having a good job. </p><p class="captions" data-trigger="8.3">When you graduate from high school, your diploma helps open doors for your future. </p><p class="captions" data-trigger="13.2">You can go to a four-year or two-year college, join the military, take classes on a trade, or join the workforce to receive on-the-job training. </p><p class="captions" data-trigger="23.8">For the most part, more education means more choices for you, and it also means you will earn more money than others who aren't as well educated.</p></ul>
+            </div>
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                const gsapConfig = JSON.parse('{"img":{"duration":1,"x":-200,"opacity":0,"ease":"back"},".text-container p":{"duration":1.2,"y":50,"opacity":0,"ease":"power3.out","delay":0.5},"audio":{"duration":1,"y":100,"opacity":0,"ease":"power2.out","delay":0.8},".captions":{"duration":1,"x":100,"opacity":0,"ease":"power1.inOut","stagger":0.3,"delay":1.1}}');
+  
+                gsap.from('img', gsapConfig.img);
+                gsap.from('.text-container p', gsapConfig['.text-container p']);
+                gsap.from('audio', gsapConfig.audio);
+                gsap.from('.captions p', gsapConfig['.captions']);
+  
+                const audio = document.querySelector('audio');
+                const captions = document.querySelectorAll('.captions p');
+  
+                audio.addEventListener('timeupdate', function() {
+                  captions.forEach((caption, index) => {
+                    const trigger = parseFloat(caption.getAttribute('data-trigger'));
+                    const nextTrigger = index < captions.length - 1 ? parseFloat(captions[index + 1].getAttribute('data-trigger')) : audio.duration;
+  
+                    if (audio.currentTime >= trigger && audio.currentTime < nextTrigger) {
+                      caption.style.display = 'block';
+                    } else {
+                      caption.style.display = 'none';
+                    }
+                  });
+                });
+              });
+            </script>
+          </body>
+          </html>
+        

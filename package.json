@@ -1,0 +1,17 @@
+{
+  "name": "cgpt-code-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sbook-to-html.js",
+  "scripts": {
+    "start": "http-server -c-1 -p 8081"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "^3.11.4",
+    "http-server": "^14.1.1",
+    "xml2js": "^0.4.23"
+  }
+
+}
